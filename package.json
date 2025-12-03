@@ -1,5 +1,5 @@
 {
-  "name": "identity-dynamic",
+  "name": "cloudflare-gateway-dynamic-pages",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

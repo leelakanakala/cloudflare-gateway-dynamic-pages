@@ -57,7 +57,7 @@ async function handleEnvRequest(request, env) {
         secondaryColor: body.secondaryColor || "#2ecc71", // Default for secondary color
       };
       // eslint-disable-next-line
-      await IDENTITY_DYNAMIC_THEME_STORE.put(
+      await gw_custom_pages_kv.put(
         themeKey,
         JSON.stringify(updatedTheme)
       );
@@ -71,7 +71,7 @@ async function handleEnvRequest(request, env) {
     }
 
     if (request.method === "GET") {
-      const theme = await IDENTITY_DYNAMIC_THEME_STORE.get(themeKey);
+      const theme = await gw_custom_pages_kv.get(themeKey);
 
       // Update environment variables to include only primary and secondary colors
       const envVars = {
@@ -164,7 +164,7 @@ async function handleUploadRequest(request, env) {
     const key = `${type}`;
     console.log(`Saving file to KV with key: ${key}`);
 
-    await IDENTITY_DYNAMIC_THEME_STORE.put(key, file.stream(), {
+    await gw_custom_pages_kv.put(key, file.stream(), {
       metadata: { contentType: file.type },
     });
 
@@ -194,7 +194,7 @@ async function handleUploadRequest(request, env) {
 async function handleAssetRetrieval(request, env, key) {
   try {
     // Access the KV namespace via env
-    const asset = await IDENTITY_DYNAMIC_THEME_STORE.getWithMetadata(key, {
+    const asset = await gw_custom_pages_kv.getWithMetadata(key, {
       type: "stream",
     });
 
@@ -321,7 +321,7 @@ async function handleEvent(event) {
   try {
     if (url.pathname.startsWith("/assets/")) {
       const key = url.pathname.replace("/assets/", ""); // Extract the key
-      const asset = await IDENTITY_DYNAMIC_THEME_STORE.getWithMetadata(key, {
+      const asset = await gw_custom_pages_kv.getWithMetadata(key, {
         type: "stream",
       });
 

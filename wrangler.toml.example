@@ -1,0 +1,26 @@
+# TEMPLATE FILE - Copy to wrangler.toml and fill in your values
+name = "cloudflare-gateway-dynamic-pages"
+workers_dev = false
+compatibility_date = "2024-11-25"
+main = "src/main.js"
+account_id = "YOUR_CLOUDFLARE_ACCOUNT_ID"
+routes = [
+	{ pattern = "your-domain.com", custom_domain = true }	
+]
+[[kv_namespaces]] 
+binding = "gw_custom_pages_kv"
+id = "YOUR_KV_NAMESPACE_ID"
+[vars]
+CORS_ORIGIN = "your-domain.com/debug"
+ACCOUNT_ID = "YOUR_CLOUDFLARE_ACCOUNT_ID"
+ORGANIZATION_ID = "YOUR_CLOUDFLARE_ORGANIZATION_ID"
+ORGANIZATION_NAME = "Your Organization Name"
+DEBUG = "true"
+SETUP = "false"
+TARGET_GROUP = "NA"
+[site]
+bucket = "./build"
+[observability.logs]
+enabled = true
+[build]
+command = "npm run build"

@@ -11,7 +11,7 @@
 #
 # ==============================================================================
 
-name = "identity-dynamic"
+name = "cloudflare-gateway-dynamic-pages"
 workers_dev = false
 compatibility_date = "2024-11-25"
 main = "src/main.js"
@@ -19,38 +19,38 @@ main = "src/main.js"
 #------------------------------------------------------------------
 # Insert your account id
 #------------------------------------------------------------------
-account_id = "4b4dd89ae17661da1cb0ae3b6d35ebe3"
+account_id = "d2b46b90090c5d9e61032bd23fd3f1c5"
 
 #------------------------------------------------------------------
 # Add your worker domain, for example: identity.pleasant-sensor.com
 #------------------------------------------------------------------
 routes = [
-	{ pattern = "identity-dynamic.acmecorp.work", custom_domain = true }	
+	{ pattern = "0secuirty.net", custom_domain = true }	
 ]
 
 #------------------------------------------------------------------
 # We will fill up the kv's id in later step
 #------------------------------------------------------------------
 [[kv_namespaces]] 
-binding = "IDENTITY_DYNAMIC_THEME_STORE"
-id = "fc983f60deec496b87f5809f3e3cca41"
+binding = "gw_custom_pages_kv"
+id = "fb27d0e7e30649d68820712fb517b17d"
 
 [vars]
 #------------------------------------------------------------------
 # This should be the route pattern domain /debug , for example: https://identity.pleasant-sensor.com/debug
 #------------------------------------------------------------------
-CORS_ORIGIN = "identity-dynamic.acmecorp.work/debug"  # This should be the route pattern domain /debug (https://example.com/debug)
+CORS_ORIGIN = "0secuirty.net/debug"  # This should be the route pattern domain /debug (https://example.com/debug)
 
 #------------------------------------------------------------------
 # Insert your account id (use the same value for both vars)
 #------------------------------------------------------------------
-ACCOUNT_ID = "4b4dd89ae17661da1cb0ae3b6d35ebe3"
-ORGANIZATION_ID = "4b4dd89ae17661da1cb0ae3b6d35ebe3"
+ACCOUNT_ID = "d2b46b90090c5d9e61032bd23fd3f1c5"
+ORGANIZATION_ID = "0199ce605b6c79a78c01232579bd86ec"
 
 #------------------------------------------------------------------
 # Insert your team domain without cloudflareaccess.com. for example: zt-pleasant-sensor
 #------------------------------------------------------------------
-ORGANIZATION_NAME = "realacmecorp"
+ORGANIZATION_NAME = "Zero Security Corp"
 
 
 DEBUG = "true"

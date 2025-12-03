@@ -28,7 +28,7 @@ const GatewayRedirect = () => {
   ]);
 
   const [bugsTicketUrlBase, setBugsTicketUrlBase] = useState(
-    "https://jira.acmecorp.work"
+    "https://jira.0secuirty.net"
   );
   const [showBugsCta, setShowBugsCta] = useState(false);
   const [bugsTicketHref, setBugsTicketHref] = useState("");
@@ -147,7 +147,7 @@ const GatewayRedirect = () => {
     const summary = `Internal Gateway Block Categorisation: ${obfuscatedDomain}`;
 
     const descriptionLines = [
-      "*Context information from AcmeCorp Gateway block page:*",
+      "*Context information from Zero Security Corp Gateway block page:*",
       "",
       `*Domain*: ${parsedDomain || "(unknown)"}`,
       `*Rule ID*: ${contextData?.cf_rule_id || "(unknown)"}`,
@@ -238,14 +238,14 @@ const GatewayRedirect = () => {
     <div className="bg-steel min-h-screen relative">
       <div className={`max-w-7xl mx-auto ${isMobile ? "px-4" : "px-[100px]"} py-6 sm:py-10`}>
         <h1 className={`${isMobile ? "text-2xl" : "text-4xl"} font-bold mb-6 text-center`}>
-          This site is blocked by the AcmeCorp Security team
+          This site is blocked by the Zero Security Corp Security team
         </h1>
         <hr className="my-6 border-gray-light" />
 
         <div className="flex justify-center mb-6">
           <Alert type="info">
             <div className="text-center">
-              AcmeCorp Threat Intel has flagged this domain as a potential security risk.<br />
+              Zero Security Corp Threat Intel has flagged this domain as a potential security risk.<br />
               <span className="italic">
                 {ruleData?.result?.description ?? (ruleData ? "No description provided." : "")}
               </span>
