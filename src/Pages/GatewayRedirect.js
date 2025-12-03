@@ -28,7 +28,7 @@ const GatewayRedirect = () => {
   ]);
 
   const [bugsTicketUrlBase, setBugsTicketUrlBase] = useState(
-    "https://jira.0secuirty.net"
+    "https://jira.0security.net"
   );
   const [showBugsCta, setShowBugsCta] = useState(false);
   const [bugsTicketHref, setBugsTicketHref] = useState("");

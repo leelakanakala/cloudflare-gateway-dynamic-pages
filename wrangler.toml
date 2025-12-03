@@ -25,7 +25,7 @@ account_id = "d2b46b90090c5d9e61032bd23fd3f1c5"
 # Add your worker domain, for example: identity.pleasant-sensor.com
 #------------------------------------------------------------------
 routes = [
-	{ pattern = "0secuirty.net", custom_domain = true }	
+	{ pattern = "blocked.0security.net", custom_domain = true }	
 ]
 
 #------------------------------------------------------------------
@@ -39,7 +39,7 @@ id = "fb27d0e7e30649d68820712fb517b17d"
 #------------------------------------------------------------------
 # This should be the route pattern domain /debug , for example: https://identity.pleasant-sensor.com/debug
 #------------------------------------------------------------------
-CORS_ORIGIN = "0secuirty.net/debug"  # This should be the route pattern domain /debug (https://example.com/debug)
+CORS_ORIGIN = "blocked.0security.net/debug"  # This should be the route pattern domain /debug (https://example.com/debug)
 
 #------------------------------------------------------------------
 # Insert your account id (use the same value for both vars)
